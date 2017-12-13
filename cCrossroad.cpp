@@ -20,7 +20,7 @@ void cCrossroad::Run(void)
 		trafficLightsList[i] -> Run();
 	}
 
-	//TODO setmode
+	//TODO setmode hahaha
 
 
 }
