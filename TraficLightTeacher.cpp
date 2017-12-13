@@ -7,7 +7,7 @@
 #include "cCrossroad.h"
 #include "cShedule.h"
 
-cLamp HeartbeatLed					(13, HIGH, LOW,  200);
+cLamp HeartbeatLed					(13, HIGH, LOW,  300);
 
 
 cLamp pedMainLampGreenPin2			(2,  LOW,  HIGH, 500);
@@ -69,26 +69,13 @@ cShedule shedule(*trafficLightScheduler, sheduleStepAmount);
 
 cCrossroad  crossroad(trafficLightsList, trafficLightAmount, &shedule);
 
-
-
-
 void setup() {
-
+	HeartbeatLed.SetMode(lampBlink);
 }
 
 // The loop function is called in an endless loop
 void loop() {
 	crossroad.Run();
-
-	delay(5000);
-	shedule.getStep(8, 5);
-
-	Serial.print(trafficLightAmount);
-	Serial.write("\n\n\n\n\n");
-
-	Serial.print(sheduleStepAmount);
-	Serial.write("\n\n\n\n\n");
-
-
+	HeartbeatLed.Run();
 }
 

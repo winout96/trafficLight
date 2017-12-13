@@ -8,10 +8,11 @@
 #include "cCrossroad.h"
 #include "stdint.h"
 
-cCrossroad::cCrossroad(cTrafficLight **ptrTrafficLightsList, uint8_t trafficLightAmount,  cShedule *shedule )
+cCrossroad::cCrossroad(cTrafficLight **ptrTrafficLightsList, uint8_t trafficLightAmount,  cShedule *ptrShedule )
 {
 	this->trafficLightsList = ptrTrafficLightsList;
 	this->trafficLightAmount = trafficLightAmount;
+	this->shedule = ptrShedule;
 }
 
 void cCrossroad::Run(void)
@@ -21,6 +22,21 @@ void cCrossroad::Run(void)
 	}
 
 	//TODO setmode hahaha
+
+
+
+
+//	delay(5000);
+//	shedule->getState(8, 5);
+//
+//	Serial.print(trafficLightAmount);
+//	Serial.write("\n\n\n\n\n");
+//
+//	Serial.print(sheduleStepAmount);
+//	Serial.write("\n\n\n\n\n");
+
+
+
 
 
 }

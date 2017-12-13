@@ -12,7 +12,7 @@ cShedule::cShedule(uint8_t *ptrSheduleTable,  uint8_t sheduleStepAmount) {
 	this->sheduleTable = ptrSheduleTable;
 }
 
-uint8_t cShedule::getStep(uint8_t stepNumber, uint8_t trafficLightNumber) {
+uint8_t cShedule::getState(uint8_t stepNumber, uint8_t trafficLightNumber) {
 	Serial.begin(9600);
 	uint8_t m = 5;
 

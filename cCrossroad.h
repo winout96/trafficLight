@@ -24,6 +24,8 @@ private:
 	cTrafficLight **trafficLightsList;
 
 	uint8_t trafficLightAmount;
+
+	cShedule *shedule;
 };
 
 #endif /* CCROSSROAD_H_ */

@@ -13,7 +13,7 @@
 class cShedule {
 public:
 	cShedule(uint8_t *ptrSheduleTable, uint8_t sheduleStepAmount);
-	uint8_t getStep(uint8_t stepNumber, uint8_t trafficLightNumber);
+	uint8_t getState(uint8_t stepNumber, uint8_t trafficLightNumber);
 	uint8_t getTime(uint8_t stepNumber);
 private:
 
