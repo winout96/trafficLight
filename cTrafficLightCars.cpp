@@ -14,6 +14,7 @@ cTrafficLightCars::cTrafficLightCars(cLamp *ptrLampGreen, cLamp *ptrLampYellow, 
 }
 
 void cTrafficLightCars::Run(void){
+
 	lampGreen->Run();
 	lampYellow->Run();
 	lampRed->Run();

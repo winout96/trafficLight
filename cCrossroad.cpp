@@ -4,7 +4,7 @@
  *  Created on: 4 дек. 2017 г.
  *      Author: Oleksii Husak
  */
-
+#include "Arduino.h"
 #include "cCrossroad.h"
 #include "stdint.h"
 
@@ -13,30 +13,41 @@ cCrossroad::cCrossroad(cTrafficLight **ptrTrafficLightsList, uint8_t trafficLigh
 	this->trafficLightsList = ptrTrafficLightsList;
 	this->trafficLightAmount = trafficLightAmount;
 	this->shedule = ptrShedule;
+
+	this->currentStep = 0;
+
+	this->startTime = millis();
+
+
+	this->currentTime = millis();
+
+	this->stepTime = shedule->getTime(currentStep);
+
+	for (uint8_t i = 0; i < trafficLightAmount; ++i) {
+		trafficLightsList[i]->SetMode((TrafficLightModes_t) shedule->getState(currentStep, i));
+	}
+
+
+
+
 }
 
 void cCrossroad::Run(void)
 {
+	currentTime = millis();
+
 	for (uint8_t i = 0; i < trafficLightAmount; ++i) {
 		trafficLightsList[i] -> Run();
 	}
 
-	//TODO setmode hahaha
+	if (currentTime - startTime > stepTime) {
+		currentStep = shedule->getNextStep(currentStep);
+		stepTime = shedule->getTime(currentStep);
 
+		for (uint8_t i = 0; i < trafficLightAmount; ++i) {
+			trafficLightsList[i]->SetMode((TrafficLightModes_t) shedule->getState(currentStep, i));
+		}
 
-
-
-//	delay(5000);
-//	shedule->getState(8, 5);
-//
-//	Serial.print(trafficLightAmount);
-//	Serial.write("\n\n\n\n\n");
-//
-//	Serial.print(sheduleStepAmount);
-//	Serial.write("\n\n\n\n\n");
-
-
-
-
-
+		startTime = millis();
+	}
 }

@@ -51,13 +51,13 @@ uint8_t trafficLightAmount = sizeof(trafficLightsList)/sizeof(trafficLightsList[
 
 static uint8_t trafficLightScheduler[][5] = {
 /*		Main Cars			Second Cars			Main Ped			Second Ped			Duration (sec)	*/
-/*0*/	{modeService,		modeService,		modeService,		modeService,			5},
+/*0*/	{modeService,		modeService,		modeService,		modeService,			10},
 /*1*/	{modeGreen,			modeRed,			modeRed,			modeGreen,				5},
-/*2*/	{modeGreenBlink, 	modeRed,			modeRed,			modeGreenBlink,			5},
-/*3*/	{modeYellow,		modeRed,			modeRed,			modeRed,				5},
-/*4*/	{modeRed, 			modeRedYellow,		modeGreen,			modeRed,				5},
+/*2*/	{modeGreenBlink, 	modeRed,			modeRed,			modeGreenBlink,			3},
+/*3*/	{modeYellow,		modeRed,			modeRed,			modeRed,				2},
+/*4*/	{modeRed, 			modeRedYellow,		modeGreen,			modeRed,				2},
 /*5*/	{modeRed,			modeGreen,			modeGreen, 			modeRed,				5},
-/*6*/	{modeRed,			modeGreenBlink,		modeGreenBlink,		modeRed,				5},
+/*6*/	{modeRed,			modeGreenBlink,		modeGreenBlink,		modeRed,				3},
 /*7*/	{modeRed,			modeRedYellow,		modeRed,			modeRed,				5},
 /*8*/	{modeRedYellow,		modeRed,			modeRed,			modeRed,				5}
 
@@ -65,12 +65,13 @@ static uint8_t trafficLightScheduler[][5] = {
 
 uint8_t sheduleStepAmount = sizeof(trafficLightScheduler)/sizeof(trafficLightScheduler[0]);
 
-cShedule shedule(*trafficLightScheduler, sheduleStepAmount);
+cShedule shedule(*trafficLightScheduler, 1, sheduleStepAmount, trafficLightAmount);
 
 cCrossroad  crossroad(trafficLightsList, trafficLightAmount, &shedule);
 
 void setup() {
 	HeartbeatLed.SetMode(lampBlink);
+
 }
 
 // The loop function is called in an endless loop
@@ -78,4 +79,3 @@ void loop() {
 	crossroad.Run();
 	HeartbeatLed.Run();
 }
-

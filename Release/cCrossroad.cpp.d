@@ -1,5 +1,4 @@
-cCrossroad.cpp.o: ..\cCrossroad.cpp ..\cCrossroad.h ..\cTrafficLight.h \
- ..\cShedule.h \
+cCrossroad.cpp.o: ..\cCrossroad.cpp \
  C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/Arduino.h \
  C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/binary.h \
  C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/WCharacter.h \
@@ -10,13 +9,8 @@ cCrossroad.cpp.o: ..\cCrossroad.cpp ..\cCrossroad.h ..\cTrafficLight.h \
  C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/Printable.h \
  C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/USBAPI.h \
  C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/Arduino.h \
- C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\variants\standard/pins_arduino.h
-
-..\cCrossroad.h:
-
-..\cTrafficLight.h:
-
-..\cShedule.h:
+ C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\variants\standard/pins_arduino.h \
+ ..\cCrossroad.h ..\cTrafficLight.h ..\cShedule.h
 
 C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/Arduino.h:
 
@@ -39,3 +33,9 @@ C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/USBA
 C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\cores\arduino/Arduino.h:
 
 C:\eclipse\arduinoPlugin\packages\arduino\hardware\avr\1.6.20\variants\standard/pins_arduino.h:
+
+..\cCrossroad.h:
+
+..\cTrafficLight.h:
+
+..\cShedule.h:

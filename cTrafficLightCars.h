@@ -29,9 +29,9 @@ private:
 		/* modeGreen */			{lampOn, 	lampOff,	lampOff	},
 		/* modeGreenBlink */	{lampBlink,	lampOff,	lampOff	},
 		/* modeRed */			{lampOff,	lampOff,    lampOn	},
+		/* modeService */		{lampOff,	lampBlink,	lampOff },
 		/* modeYellow */		{lampOff,	lampOn,		lampOff	},
-		/* modeRedYellow */		{lampOff,	lampOn,		lampOn	},
-		/* modeService */		{lampOff,	lampBlink,	lampOff }
+		/* modeRedYellow */		{lampOff,	lampOn,		lampOn	}
 	};
 
 };
